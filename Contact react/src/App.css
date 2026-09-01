@@ -1,0 +1,445 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Material UI Inspired Styles */
+
+/* Contact List Table */
+#contact-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px 0;
+}
+
+#contact-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact-table th {
+  background: linear-gradient(135deg, var(--accent) 0%, #8a2be2 100%);
+  color: white;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+#contact-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: 15px;
+}
+
+#contact-table tr:last-child td {
+  border-bottom: none;
+}
+
+#contact-table tr:hover {
+  background: var(--accent-bg);
+  transition: background-color 0.2s ease;
+}
+
+/* Buttons */
+button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--accent) 0%, #8a2be2 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(170, 59, 255, 0.2);
+}
+
+button:hover {
+  box-shadow: 0 4px 12px rgba(170, 59, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(170, 59, 255, 0.2);
+}
+
+button:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Buttons Container */
+.buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.buttons button {
+  min-width: 180px;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* Forms Container */
+div > h2 {
+  color: var(--text-h);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+div > h1 {
+  color: var(--text-h);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+div > p {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+/* Delete Contact Section */
+div h1 {
+  color: var(--text-h);
+  margin-bottom: 24px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 600px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+}
+
+li span {
+  color: var(--text-h);
+  font-weight: 500;
+  flex: 1;
+}
+
+li button {
+  margin-left: 12px;
+  padding: 8px 16px;
+  font-size: 13px;
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  min-width: auto;
+}
+
+li button:hover {
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+/* Form Container */
+div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: var(--bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+  padding: 40px 20px;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row; /* Coloca los elementos en una fila (es el valor por defecto) */
+  gap: 16px; /* Añade espacio entre los botones */
+  justify-content: center; /* Centra los botones horizontalmente */
+  align-items: center; /* Centra los botones verticalmente */
+}
+
+.buttons button {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem; /* 14px */
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  min-width: 64px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. Botón "Añadir contacto" (Estilo Contained - Azul primario) */
+.buttons button:first-child {
+  color: #fff;
+  background-color: #1976d2;
+  border: 0;
+  /* Sombra base de Material UI */
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),
+              0px 2px 2px 0px rgba(0,0,0,0.14),
+              0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+.buttons button:first-child:hover {
+  background-color: #1565c0;
+  /* Elevación al hacer hover */
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),
+              0px 4px 5px 0px rgba(0,0,0,0.14),
+              0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.buttons button:first-child:active {
+  /* Efecto de presión al hacer clic */
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),
+              0px 8px 10px 1px rgba(0,0,0,0.14),
+              0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+
+/* 2. Botón "Eliminar contacto" (Estilo Outlined - Rojo de advertencia) */
+.buttons button:last-child {
+  color: #d32f2f;
+  background-color: transparent;
+  border: 1px solid rgba(211, 47, 47, 0.5);
+  box-shadow: none;
+}
+
+.buttons button:last-child:hover {
+  /* Fondo muy sutil con el color del texto (transparencia al 4%) */
+  background-color: rgba(211, 47, 47, 0.04);
+  border-color: #d32f2f;
+}
