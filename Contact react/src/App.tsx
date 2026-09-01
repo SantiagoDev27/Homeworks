@@ -4,12 +4,29 @@ import ContactList from './components/contactList/contactList'
 import './App.css'
 import NewContact from './components/newContact/newcontact'
 import DeleteContact from './components/deleteContact/deletecontact'
+import carregando from './assets/carregando.gif'
 
 
 
 function App() {
 const [showNewContact, setShowNewContact] = useState(false)
 const [showDeleteContact, setShowDeleteContact] = useState(false)
+const [loading, setLoading] = useState(true)
+
+if (loading) {
+  setTimeout(() => {
+    setLoading(false)
+  }, 500)
+
+  return (
+    <section id="center">
+    <div className="loading">
+      <img src={carregando} alt="Cargando..." />
+      <p>Cargando...</p>
+    </div>
+    </section>
+  )
+}
 
 const handleNewContactClose = (accion: String) => {
   if (accion === 'newContact') {
@@ -50,11 +67,6 @@ const handleNewContactClose = (accion: String) => {
         </div>
 
       </section>
-
-      <div className="ticks"></div>
-
-      <div className="ticks"></div>
-
     </>
   )
 }
