@@ -36,9 +36,9 @@ export class CircularDoublyCommitteeList {
 export const getMockedCommittee = (): CircularDoublyCommitteeList => {
     const committee = new CircularDoublyCommitteeList();
     
-    committee.append("Dr. Richard Webber", "Director Médico");
-    committee.append("Dra. Miranda Bailey", "Jefa de Cirugía");
-    committee.append("Dra. Lisa Cuddy", "Administradora General");
-    committee.append("Dr. Eric Foreman", "Decano de Medicina");
+    committee.append("Admin 1", "Director Médico");
+    committee.append("Admin 2", "Jefa de Cirugía");
+    committee.append("Admin 3", "Administradora General");
+    committee.append("Admin 4", "Decano de Medicina");
     return committee;
 };
