@@ -1,0 +1,67 @@
+.app-layout {
+  font-family: system-ui, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.main-content {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+.left-panel, .right-panel {
+  flex: 1;
+}
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.input-group input {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button.pop-btn {
+  background-color: #dc3545;
+  margin-bottom: 20px;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.books-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.book-card {
+  padding: 15px;
+  border: 2px solid #555;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.top-book {
+  border-color: #28a745;
+  border-width: 3px;
+  background-color: #eafbee;
+}
+.book-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.book-details {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 5px;
+}
