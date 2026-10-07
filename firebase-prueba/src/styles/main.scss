@@ -1,0 +1,32 @@
+@import 'bootstrap/scss/bootstrap';
+
+// Custom SASS variables and nesting
+$primary-bg: #f8f9fa;
+$task-color: #333;
+
+body {
+    background-color: $primary-bg;
+    font-family: 'Inter', sans-serif;
+}
+
+.task-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .task-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+
+        &.completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+    }
+}
