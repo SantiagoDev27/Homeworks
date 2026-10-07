@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCgOZw29tzV5gYNsZeQyrhRfddkjv5Yvvo",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "challenge-07-bbd5a.firebaseapp.com",
   projectId: "challenge-07-bbd5a",
   storageBucket: "challenge-07-bbd5a.firebasestorage.app",
