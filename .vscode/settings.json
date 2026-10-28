@@ -1,0 +1,23 @@
+{
+  "deno.enable": false,
+  "deno.enablePaths": [
+    "supabase/supabase/functions"
+  ],
+  "deno.path": "./supabase/node_modules/deno/deno.exe",
+  "deno.lint": true,
+  "deno.unstable": [
+    "bare-node-builtins",
+    "byonm",
+    "sloppy-imports",
+    "unsafe-proto",
+    "webgpu",
+    "broadcast-channel",
+    "worker-options",
+    "cron",
+    "kv",
+    "ffi",
+    "fs",
+    "http",
+    "net"
+  ]
+}
