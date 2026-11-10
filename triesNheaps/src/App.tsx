@@ -1,14 +1,25 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import './App.css'
 import type { element } from './types/element'
+import Trie from './utils/trie_class'
+
+const INITIAL_ELEMENTS: element[] = [
+  { nombre: 'f-22 raptor', popularidad: 95 },
+  { nombre: 'f-35 lightning', popularidad: 92 },
+  { nombre: 'f-16 falcon', popularidad: 90 },
+  { nombre: 'f-15 eagle', popularidad: 85 },
+  { nombre: 'a-10 warthog', popularidad: 80 },
+  { nombre: 'b-2 spirit', popularidad: 75 },
+]
 
 function App() {
   const [nombre, setNombre] = useState('')
   const [popularidad, setPopularidad] = useState('')
-  const [elements, setElements] = useState<element[]>([])
+  const [elements, setElements] = useState<element[]>(INITIAL_ELEMENTS)
+  const [prefix, setPrefix] = useState('')
+  const [k, setK] = useState('3')
 
-  // Solo es un element válido si ambos campos tienen datos y cumplen el tipo
   const parsedPopularidad = Number(popularidad)
   const newElement: element | null =
     nombre.trim() !== '' && popularidad.trim() !== '' && Number.isFinite(parsedPopularidad)
@@ -18,10 +29,22 @@ function App() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     if (!newElement) return
-    setElements((prev) => [...prev, newElement])
+    setElements((prev) => [
+      ...prev.filter((el) => el.nombre.toLowerCase() !== newElement.nombre.toLowerCase()),
+      newElement,
+    ])
     setNombre('')
     setPopularidad('')
   }
+
+  const trie = useMemo(() => {
+    const t = new Trie()
+    elements.forEach((el) => t.insert(el.nombre, el.popularidad))
+    return t
+  }, [elements])
+
+  const kValue = Math.max(1, Math.floor(Number(k)) || 1)
+  const topResults = useMemo(() => trie.searchTopK(prefix, kValue), [trie, prefix, kValue])
 
   return (
     <>
@@ -55,6 +78,29 @@ function App() {
               </ul>
             </div>
           </div>
+        </section>
+        <section id='Search_section'>
+          <h2>Buscar por prefijo</h2>
+          <input
+            type="text"
+            placeholder="Prefijo"
+            value={prefix}
+            onChange={(e) => setPrefix(e.target.value)}
+          />
+          <input
+            type="number"
+            min="1"
+            placeholder="K"
+            value={k}
+            onChange={(e) => setK(e.target.value)}
+          />
+          <p>Top {kValue} más populares:</p>
+          <ol>
+            {topResults.map((el) => (
+              <li key={el.nombre}>{el.nombre}: {el.popularidad}</li>
+            ))}
+            {topResults.length === 0 && <li>Sin resultados</li>}
+          </ol>
         </section>
       </section>
     </>
