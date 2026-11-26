@@ -1,0 +1,263 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  background-color: $bg-page;
+  color: $text-main;
+  line-height: 1.5;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $space-lg $space-md;
+}
+
+.dashboard-header {
+  margin-bottom: $space-lg;
+
+  h1 {
+    margin: 0 0 $space-xs;
+    font-size: 1.85rem;
+    color: $text-main;
+  }
+
+  p {
+    margin: 0;
+    color: $text-muted;
+  }
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: $space-md;
+  align-items: start;
+}
+
+.panel {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+
+  h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: $text-main;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 0.98rem;
+    color: $text-main;
+  }
+
+  label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: $text-muted;
+  }
+
+  input,
+  select {
+    @include input-base;
+  }
+
+  button[type='submit'] {
+    @include button;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
+.feedback {
+  margin: 0;
+  padding: $space-sm;
+  font-size: 0.9rem;
+  color: $accent-hover;
+  background-color: $accent-soft;
+  border: 1px solid $border-color;
+  border-radius: $radius-sm;
+}
+
+.empty-state {
+  margin: 0;
+  font-size: 0.9rem;
+  color: $text-muted;
+}
+
+.panel-search {
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  .search-controls {
+    display: flex;
+    gap: $space-xs;
+
+    input {
+      flex: 1;
+    }
+  }
+
+  .suggestions-box {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  .suggestions-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  .suggestion-button {
+    @include button-secondary;
+    width: 100%;
+    text-align: left;
+  }
+
+  .add-song-form {
+    padding-top: $space-md;
+    border-top: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+}
+
+.panel-ranking {
+  .panel-header {
+    @include flex-between;
+  }
+
+  .limit-control {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+
+    select {
+      width: auto;
+    }
+  }
+
+  .ranking-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  .ranking-item {
+    @include flex-between;
+    padding: $space-sm;
+    background-color: $bg-subtle;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+
+    &:first-child .position {
+      background-color: $accent;
+      color: #ffffff;
+    }
+  }
+
+  .song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .position {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $accent;
+    background-color: $accent-soft;
+    border-radius: $radius-sm;
+  }
+
+  .song-title {
+    font-size: 0.98rem;
+    color: $text-main;
+  }
+
+  .song-meta,
+  .song-plays {
+    font-size: 0.85rem;
+    color: $text-muted;
+  }
+
+  .song-actions {
+    display: flex;
+    gap: $space-xs;
+    flex-wrap: wrap;
+
+    button:first-child {
+      @include button;
+    }
+
+    button:last-child {
+      @include button-secondary;
+    }
+  }
+}
+
+.panel-recommendations {
+  .active-song-selector {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  .related-box {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  .related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  .related-item button {
+    @include button-secondary;
+    width: 100%;
+    text-align: left;
+  }
+
+  .connect-form {
+    padding-top: $space-md;
+    border-top: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+}

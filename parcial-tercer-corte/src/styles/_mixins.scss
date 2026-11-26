@@ -1,0 +1,60 @@
+@use 'variables' as *;
+
+@mixin card {
+  background-color: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: $radius-md;
+  padding: $space-md;
+  box-shadow: $shadow-card;
+}
+
+@mixin input-base {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: $text-main;
+  background-color: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: $radius-sm;
+  outline: none;
+  transition: border-color 0.15s ease;
+
+  &:focus {
+    border-color: $accent;
+  }
+}
+
+@mixin button($bg: $accent, $color: #ffffff, $hover-bg: $accent-hover) {
+  padding: 0.55rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: $color;
+  background-color: $bg;
+  border: 1px solid transparent;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background-color: $hover-bg;
+  }
+}
+
+@mixin button-secondary {
+  @include button($bg-subtle, $text-main, $accent-soft);
+  border-color: $border-color;
+
+  &:hover {
+    border-color: $accent;
+  }
+}
+
+@mixin flex-between($gap: $space-sm) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $gap;
+  flex-wrap: wrap;
+}
